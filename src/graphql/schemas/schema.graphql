@@ -1,0 +1,50 @@
+enum Language {
+  en
+  nl
+  de
+  esp
+  bih
+}
+
+type Slogan {
+  "This is the slogan message"
+  slogan: String!
+
+  "The chosen language is returned"
+  language: Language!
+}
+
+input NewSloganTranslationInput {
+  "This is the name of the language that needs to be added"
+  languageName: String!
+
+  "This is the Language Code that we will add to our translation doc"
+  languageCode: String!
+
+  "The translated slogan that will be added in a new doc"
+  slogan: String!
+}
+
+extend type Query {
+  "Sends back a slogan of HybrIT"
+  getSlogan(
+    "The desired language, defaults to 'en' if nothing is defined"
+    language: Language
+  ): Slogan!
+}
+
+extend type Mutation {
+  "Changes a translation for HybrIT translations"
+  updateSlogan(
+    "The language code that needs to be added"
+    language: Language!
+    "The slogan message that needs to be added"
+    slogan: String!
+  ): Slogan!
+
+  "Adds another translation document if it doesnt already exist"
+  createNewSlogan(
+    "The input for creating a new hybrit translation"
+    input: NewSloganTranslationInput!
+  ): Slogan!
+}

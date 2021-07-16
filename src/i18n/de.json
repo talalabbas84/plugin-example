@@ -1,0 +1,16 @@
+[
+    {
+      "language": "English",
+      "i18n": "en",
+      "ns": "reaction-plugin-template",
+      "translation": {
+        "reaction-plugin-template": {
+          "admin": {
+            "hybrit": {
+              "slogan": "code it smarter"
+            }
+          }
+        }
+      }
+    }
+]
