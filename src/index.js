@@ -38,6 +38,14 @@ export default async function register(app) {
         ExampleTemplateCollection: {
               name: "ExampleTemplateCollection"
           }
-      }
+      },
+      graphQL: {
+        resolvers,
+        schemas
+      },
+      mutations,
+      queries,
+      policies,
+    
     });
   }
